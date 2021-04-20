@@ -65,3 +65,5 @@ workflows:
       email:
         recipients:
           - bva345@gmail.com
+  empty:
+    name: Empty
