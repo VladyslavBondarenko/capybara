@@ -52,6 +52,7 @@ workflows:
         in_app_update_priority: 0
   tests:
     name: Tests
+    instance_type: linux
     max_build_duration: 60
     environment:
       flutter: stable
