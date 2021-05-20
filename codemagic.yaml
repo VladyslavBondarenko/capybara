@@ -58,6 +58,9 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
+    triggering:
+      events:
+        - push
     scripts:
       - cd . && flutter packages pub get
     artifacts:
