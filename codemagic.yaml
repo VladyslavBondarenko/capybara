@@ -3,6 +3,9 @@ workflows:
     name: Build iOS
     environment:
       xcode: 12.4
+    triggering:
+      events:
+        - push
     scripts:
       - ifconfig | grep 10 | grep inet
       - flutter packages pub get
