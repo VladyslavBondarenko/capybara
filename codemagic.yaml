@@ -73,4 +73,8 @@ workflows:
     triggering:
       events:
         - push
+  workflow-without-name:
+    triggering:
+      events:
+        - push
     
