@@ -77,4 +77,27 @@ workflows:
     triggering:
       events:
         - push
+  web-with-cache:
+    name: test
+    instance_type: linux
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths:
+        - $FCI_BUILD_DIR/web
+        - $FLUTTER_ROOT/.pub-cache
+    scripts:
+      - flutter packages pub get
+      - flutter config --enable-web
+      - |
+        # build web
+        flutter build web --release
+        cd build/web
+        7z a -r ../web.zip ./*
+    artifacts:
+      - build/web.zip
+      - flutter_drive.log
     
